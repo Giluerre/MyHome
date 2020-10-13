@@ -16,6 +16,7 @@
 
 package com.myhome.controllers;
 
+import com.myhome.controllers.dto.mapper.HouseHistoryMapper;
 import com.myhome.controllers.dto.mapper.HouseMemberMapper;
 import com.myhome.controllers.mapper.HouseApiMapper;
 import com.myhome.controllers.request.AddHouseMemberRequest;
@@ -52,6 +53,7 @@ public class HouseController {
   private final HouseMemberMapper houseMemberMapper;
   private final HouseService houseService;
   private final HouseApiMapper houseApiMapper;
+  private final HouseHistoryMapper houseHistoryMapper;
 
   @Operation(description = "List all houses of the community given a community id")
   @GetMapping(

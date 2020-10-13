@@ -16,7 +16,9 @@
 
 package com.myhome.services;
 
+import com.myhome.controllers.dto.HouseHistoryDto;
 import com.myhome.domain.CommunityHouse;
+import com.myhome.domain.HouseHistory;
 import com.myhome.domain.HouseMember;
 import java.util.List;
 import java.util.Optional;
@@ -35,4 +37,9 @@ public interface HouseService {
   Optional<CommunityHouse> getHouseDetailsById(String houseId);
 
   Optional<List<HouseMember>> getHouseMembersById(String houseId, Pageable pageable);
+
+  Optional<Set<HouseHistory>> getHouseHistory(String memberId,String houseId);
+
+  HouseHistory captureStay(HouseHistoryDto houseHistoryDto);
+
 }
