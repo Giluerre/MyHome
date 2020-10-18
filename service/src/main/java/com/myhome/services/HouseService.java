@@ -38,7 +38,7 @@ public interface HouseService {
 
   Optional<List<HouseMember>> getHouseMembersById(String houseId, Pageable pageable);
 
-  Optional<Set<HouseHistory>> getHouseHistory(String memberId,String houseId);
+  Optional<List<HouseHistory>> getHouseHistory(String memberId,String houseId);
 
   HouseHistory captureStay(HouseHistoryDto houseHistoryDto);
 

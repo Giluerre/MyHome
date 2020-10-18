@@ -114,10 +114,10 @@ public class HouseSDJpaService implements HouseService {
     );
   }
 
-  @Override public Optional<Set<HouseHistory>> getHouseHistory(String memberId, String houseId) {
-    return Optional.ofNullable(
-      houseHistoryRepository.findByMemberIdAndAndHouseId(memberId,houseId)
-    );
+  @Override public Optional<List<HouseHistory>> getHouseHistory(String memberId, String houseId) {
+    return (memberId != null)
+    ?Optional.ofNullable(houseHistoryRepository.findByMemberIdAndAndHouseId(memberId,houseId))
+    :Optional.ofNullable(houseHistoryRepository.findByHouseId(houseId));
   }
 
   @Override public HouseHistory captureStay(HouseHistoryDto houseHistoryDto) {
